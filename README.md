@@ -87,6 +87,7 @@ npm run dev
 - **Icons**: [Material Icons](https://mui.com/material-ui/material-icons/)
 
 ## 📁 Project Structure
+```markdown
 recipe-book-app/
 ├── public/ # Static assets
 ├── src/
@@ -104,7 +105,7 @@ recipe-book-app/
 ├── vite.config.ts # Vite configuration
 ├── package.json # Dependencies
 └── README.md # Documentation
-
+```
 
 
 ## 🎯 Key Features in Detail
