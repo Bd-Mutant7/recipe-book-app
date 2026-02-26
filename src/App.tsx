@@ -51,7 +51,7 @@ import AddRecipeModal from "./components/AddRecipeModal";
 import RecipeDetails from "./components/RecipeDetails";
 import AdvancedSearchDrawer from "./components/AdvancedSearchDrawer";
 import QuickActions from "./components/QuickActions";
-import { theme } from "./theme"; // We'll create this separately
+import { theme } from "./theme";
 
 // Animation variants
 const containerVariants = {
@@ -328,7 +328,7 @@ export default function App() {
         />
 
         <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1, py: 4 }}>
-          {/* Header with Animation */}
+          {/* Header with Animation - Centered Blue & Yellow Gradient (Smaller Version) */}
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -344,6 +344,7 @@ export default function App() {
                 color: "white",
                 position: "relative",
                 overflow: "hidden",
+                textAlign: "center",
               }}
             >
               {/* Decorative Elements */}
@@ -371,6 +372,16 @@ export default function App() {
               />
 
               <Box sx={{ position: "relative", zIndex: 1 }}>
+                {/* Icon */}
+                <RestaurantMenu 
+                  sx={{ 
+                    fontSize: 48,
+                    mb: 1,
+                    filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.2))",
+                  }} 
+                />
+                
+                {/* Title */}
                 <Typography 
                   variant="h3" 
                   component="h1" 
@@ -378,26 +389,39 @@ export default function App() {
                   sx={{ 
                     fontWeight: 800,
                     textShadow: "2px 2px 4px rgba(0,0,0,0.2)",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 2,
                   }}
                 >
-                  <RestaurantMenu sx={{ fontSize: 48 }} />
                   Recipe Book
-                  <Chip
-                    label={`${filteredAndSortedRecipes.length} recipes`}
-                    sx={{
-                      ml: 2,
-                      bgcolor: "rgba(255,255,255,0.2)",
-                      color: "white",
-                      fontWeight: "bold",
-                    }}
-                  />
                 </Typography>
-                <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: 600 }}>
+                
+                {/* Subtitle */}
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    opacity: 0.9,
+                    mb: 2,
+                  }}
+                >
                   Discover, create, and share your culinary masterpieces
                 </Typography>
+                
+                {/* Recipe Count Chip */}
+                <Chip
+                  icon={<RestaurantMenu />}
+                  label={`${filteredAndSortedRecipes.length} ${filteredAndSortedRecipes.length === 1 ? 'recipe' : 'recipes'}`}
+                  sx={{
+                    bgcolor: "rgba(255,255,255,0.2)",
+                    color: "white",
+                    fontWeight: "bold",
+                    "& .MuiChip-icon": {
+                      color: theme.palette.secondary.main,
+                    },
+                    "&:hover": {
+                      bgcolor: "rgba(255,255,255,0.3)",
+                    },
+                    transition: "all 0.2s ease",
+                  }}
+                />
               </Box>
             </Paper>
           </motion.div>
@@ -604,9 +628,9 @@ export default function App() {
             icon={<SpeedDialIcon />}
             FabProps={{
               sx: {
-                bgcolor: theme.palette.primary.main,
+                background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
                 '&:hover': {
-                  bgcolor: theme.palette.primary.dark,
+                  background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.secondary.dark} 100%)`,
                 }
               }
             }}
