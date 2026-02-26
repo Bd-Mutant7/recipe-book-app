@@ -1,60 +1,42 @@
-// theme.ts - We'll add this after seeing your current setup
-import { createTheme } from '@mui/material/styles';
-
-export const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#FF6B6B', // Warm coral - appetizing color
-      light: '#FF8E8E',
-      dark: '#C94A4A',
-    },
-    secondary: {
-      main: '#4ECDC4', // Fresh mint - clean and food-friendly
-      light: '#7FDAD3',
-      dark: '#2F9E95',
-    },
-    background: {
-      default: '#FAF9F8', // Warm white
-      paper: '#FFFFFF',
-    },
+{
+  "name": "recipe-book-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    h1: {
-      fontWeight: 700,
-      fontSize: '2.5rem',
-    },
-    h2: {
-      fontWeight: 600,
-      fontSize: '2rem',
-    },
-    // We'll add more typography settings
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@fontsource/roboto": "^5.1.0",
+    "@mui/icons-material": "^6.1.5",
+    "@mui/material": "^6.1.5",
+    "@mui/x-date-pickers": "^7.22.0",
+    "framer-motion": "^11.11.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-dropzone": "^14.3.5",
+    "react-intersection-observer": "^9.13.1",
+    "react-swipeable": "^7.0.2",
+    "use-debounce": "^10.0.4",
+    "dexie": "^4.0.8",
+    "dexie-react-hooks": "^2.0.0"
   },
-  shape: {
-    borderRadius: 12, // Softer corners
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          textTransform: 'none', // More modern, less all-caps
-          fontWeight: 500,
-          padding: '8px 20px',
-        },
-      },
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderRadius: 16,
-          boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-          transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
-          '&:hover': {
-            transform: 'translateY(-4px)',
-            boxShadow: '0 12px 24px rgba(0,0,0,0.1)',
-          },
-        },
-      },
-    },
-  },
-});
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.13",
+    "globals": "^15.11.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9"
+  }
+}
